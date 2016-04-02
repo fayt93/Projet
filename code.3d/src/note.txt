@@ -1,0 +1,51 @@
+opengl est un langage à balise.
+Quand on dessine, il prend la dernière couleur qui traine, Si c'est celel de fond, on voit rien !
+On a des fonctons gl_float, gl_begin, gl_end
+
+glu -> couche de l'interface graphique
+glut -> couche au dessus
+
+opengl -> ressemble au langage lateck
+
+glutsolidsphere affiche une sphere
+
+ETAPE POUR DESSINER : 
+transformation
+homothétie
+rotation
+translation
+Sinon il faut une bonne explication à ce qu'on fait car c'est l'ordre logique
+
+Les push correspond à des noeuds comme vu en TD
+
+En gros la structure de draw
+glpush
+	transfo
+	objet
+	glpush
+	transfo
+	autre objet
+	glpop
+	etc...
+glpop
+
+
+Le prof a fait une fonction g3xMatérial(g3xcolor, ambi,diff,) dans g3x_tools.h
+
+Cette fonction défini une couleur et un matériaux;
+
+
+L'intersection I obtenue avec la fonction d'intersection correspond à la normale.
+Il faut juste caster en vecteur.
+
+L'intersection en 3D est la m^eme qu'en 2D, on a juste un passage par adresse du 3ieme parametre implicite,
+donc pas besoin d'étoile.
+On utilise des I[0] au lieu de I->x
+
+On lance un rayon sur un objet et on regarde ou le réfléchie par.
+Chaque fois qu'on touche un objet on prend un peu de sa couleur.
+à la fin on peut avoir un rayon qui par à l'infini, il retourne rien ou la couleur ambiante.
+
+On doit fixer une valeur pour la récursivité dans le cas des réflexions infini.
+
+Il faut une structure objet, une structure rayon, et une liste ou tableau d'objet pour appliquer le lancer de rayon.
